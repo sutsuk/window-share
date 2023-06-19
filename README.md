@@ -1,2 +1,2 @@
-# window-share
-Window Share for Linux.
+# screen-share
+Screen Share for Linux.
