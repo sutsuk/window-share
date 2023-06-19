@@ -1,0 +1,29 @@
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: none
+Connection: close
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Window Share Viewer</title>
+    <script type="text/javascript">
+      var view, interval;
+      var reload_count = 0;
+      var reload_time = 500;
+      function Reload(){
+        view.setAttribute("src", location.href + "view" + (++reload_count));
+      }
+      function Start(){
+        view = document.getElementById("view");
+        interval = setInterval(Reload, reload_time);
+      }
+      function Stop(){
+        clearInterval(interval);
+      }
+    </script>
+  </head>
+  <body style="margin:0;" onload="Start()">
+    <img id="view" style="width:100vw;">
+  </body>
+</html> 
